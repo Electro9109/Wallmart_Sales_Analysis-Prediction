@@ -34,7 +34,3 @@ Typical columns in this dataset:
 - Python 3.8+
 - Dependencies are listed in `requirements.txt`
 
-### Install
-
-Recommended (virtual environment):
-
