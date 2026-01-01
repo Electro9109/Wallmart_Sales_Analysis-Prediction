@@ -4,10 +4,12 @@ Exploratory data analysis and visualizations on the `Walmart_Sales.csv` dataset 
 
 ## Project Overview
 
-This project focuses on:
-- Understanding sales behavior over time (trend/seasonality) via time-series plots. [web:46]
-- Comparing sales during holiday vs non-holiday weeks. [web:66]
-- Exploring relationships between `Weekly_Sales` and external variables using correlation/plots. [web:57]
+This project performs exploratory data analysis on Walmart sales data and examines:
+- Weekly sales trends and seasonality patterns
+- Impact of holidays on sales performance  
+- Relationships between sales and economic factors (CPI, fuel prices, unemployment, temperature)
+
+**Future extension**: Building forecasting models to predict future Weekly_Sales using economic indicators as exogenous variables.
 
 ## Dataset
 
