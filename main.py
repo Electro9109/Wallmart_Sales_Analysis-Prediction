@@ -7,7 +7,7 @@ data = pd.read_csv(file)
 df = pd.DataFrame(data)
 df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%Y')
 df = df.sort_values('Date')
-
+    
 all_sales = []
 for i in pd.unique(df['Date']):
     sales_on_date = df[df['Date'] == pd.to_datetime(i)]['Weekly_Sales'].values
