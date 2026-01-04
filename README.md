@@ -1,40 +1,58 @@
-# Walmart Sales Analysis (EDA)
+# Walmart Sales Forecasting
 
-Exploratory data analysis and visualizations on the `Walmart_Sales.csv` dataset to understand weekly sales trends, holiday effects, and relationships between sales and external factors (temperature, fuel price, CPI, unemployment). [web:66]
+A beginner-level data science project that analyzes Walmart sales data and builds a Random Forest machine learning model to forecast weekly sales using temporal patterns and economic indicators.
 
 ## Project Overview
 
-This project focuses on:
-- Understanding sales behavior over time (trend/seasonality) via time-series plots. [web:46]
-- Comparing sales during holiday vs non-holiday weeks. [web:66]
-- Exploring relationships between `Weekly_Sales` and external variables using correlation/plots. [web:57]
+This project performs:
+- **Exploratory Data Analysis (EDA)** on historical Walmart sales data
+- **Feature engineering** to extract temporal patterns (year, month, week, quarter)
+- **Sales forecasting** using Random Forest Regressor
+- **Model evaluation** with multiple metrics (RMSE, MAE, R²)
+- **Visualization** of predictions vs actual sales with economic context (CPI)
+
+### Why Sales Forecasting?
+
+Sales forecasting was chosen over stock prediction because it offers clearer patterns, more reliable data, and better learning outcomes for beginners. Unlike stock markets with unpredictable external influences, retail sales exhibit identifiable seasonal patterns and trends that reward proper modeling techniques.
 
 ## Dataset
 
-File: `Walmart_Sales.csv`
+**File**: `Walmart_Sales.csv`
 
-Typical columns in this dataset:
-- `Store`: Store number. [web:66]
-- `Date`: Week of sales (date). [web:66]
-- `Weekly_Sales`: Sales for the given store in that week (target). [web:66]
-- `Holiday_Flag`: Whether the week is a holiday week. [web:66]
-- `Temperature`: Temperature on the day/week. [web:66]
-- `Fuel_Price`: Fuel cost in the region. [web:66]
-- `CPI`: Consumer Price Index. [web:66]
-- `Unemployment`: Unemployment rate. [web:66]
+**Structure**:
+- **6,435 records** across 45 stores with weekly granularity
+- **Date range**: Multiple years of historical data
+- **Target variable**: `Weekly_Sales` (sales amount per store per week)
+- **Features**:
+  - `Store`: Store number (1-45)
+  - `Date`: Week of sales
+  - `Holiday_Flag`: Binary indicator for holiday weeks
+  - `Temperature`: Average temperature during the week
+  - `Fuel_Price`: Regional fuel cost
+  - `CPI`: Consumer Price Index (inflation indicator)
+  - `Unemployment`: Regional unemployment rate
 
-## Repository Structure
-
-- `main.py` — runs the analysis and generates plots.
-- `Walmart_Sales.csv` — dataset (not included if this is a public repo; consider adding it to `.gitignore`).
 
 ## Setup
 
 ### Requirements
 - Python 3.8+
-- Dependencies are listed in `requirements.txt`
+- pandas, numpy, matplotlib, scikit-learn, joblib
 
-### Install
+### Installation
 
-Recommended (virtual environment):
+**Using virtual environment (recommended)**:
 
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate (Windows PowerShell)
+venv\Scripts\Activate.ps1
+
+# Activate (macOS/Linux)
+source venv/bin/activate
+
+# Install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
